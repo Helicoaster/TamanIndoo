@@ -22,9 +22,7 @@ class KeluarFragment : Fragment() {
         slideshowViewModel =
                 ViewModelProvider(this).get(KeluarViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_keluar, container, false)
-        val textView: TextView = root.findViewById(R.id.text_slideshow)
-        slideshowViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+        slideshowViewModel.text.observe(viewLifecycleOwner, {
         })
         return root
     }

@@ -22,9 +22,7 @@ class LayananFragment : Fragment() {
         layananViewModel =
                 ViewModelProvider(this).get(LayananViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_layanan, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        layananViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+        layananViewModel.text.observe(viewLifecycleOwner, {
         })
         return root
     }
