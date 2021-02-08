@@ -58,8 +58,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (item.itemId) {
             R.id.LayananMenu -> {
                 fragment = LayananFragment()
-
-
             }
             R.id.PengaturanMenu -> {
                 fragment = PengaturanFragment()

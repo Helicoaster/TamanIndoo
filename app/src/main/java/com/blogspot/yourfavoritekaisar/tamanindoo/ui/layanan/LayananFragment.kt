@@ -9,15 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.blogspot.yourfavoritekaisar.tamanindoo.R
 import com.blogspot.yourfavoritekaisar.tamanindoo.ui.generate.GenerateActivity
-import com.google.zxing.integration.android.IntentIntegrator
 
 class LayananFragment : Fragment(), View.OnClickListener {
 
     private lateinit var layananViewModel: LayananViewModel
 
-    companion object {
-        lateinit var intentIntegrator: IntentIntegrator
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,7 +36,10 @@ class LayananFragment : Fragment(), View.OnClickListener {
                 }
             }
             R.id.btn_malam -> {
-
+                activity?.let{
+                    val intent = Intent (it, GenerateActivity::class.java)
+                    it.startActivity(intent)
+                }
             }
         }
     }
