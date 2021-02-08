@@ -1,18 +1,23 @@
-package com.blogspot.yourfavoritekaisar.tamanindoo.ui.home
+package com.blogspot.yourfavoritekaisar.tamanindoo.ui.layanan
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.blogspot.yourfavoritekaisar.tamanindoo.R
 
 class LayananFragment : Fragment() {
 
     private lateinit var layananViewModel: LayananViewModel
+
+    companion object {
+        fun newInstance(): Fragment {
+            return LayananFragment()
+        }
+    }
+
 
     override fun onCreateView(
             inflater: LayoutInflater,

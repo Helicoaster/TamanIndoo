@@ -1,4 +1,4 @@
-package com.blogspot.yourfavoritekaisar.tamanindoo.ui.gallery
+package com.blogspot.yourfavoritekaisar.tamanindoo.ui.pengaturan
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,11 +9,17 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.blogspot.yourfavoritekaisar.tamanindoo.R
+import com.blogspot.yourfavoritekaisar.tamanindoo.ui.layanan.LayananFragment
 
 class PengaturanFragment : Fragment() {
 
     private lateinit var pengaturanViewModel: PengaturanViewModel
 
+    companion object {
+        fun newInstance(): Fragment {
+            return LayananFragment()
+        }
+    }
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
