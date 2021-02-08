@@ -11,4 +11,10 @@
     <string name="menu_gallery">Pengaturan</string>
     <string name="menu_slideshow">Kesluar</string>
     <string name="Layanan">Layanan</string>
+
+    <string name="enter_text_here">Enter text here</string>
+    <string name="generate">Generate</string>
+    <string name="scanner">Scanner</string>
+    <string name="barcode_image">Barcode Image</string>
+
 </resources>

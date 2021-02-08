@@ -9,7 +9,9 @@
         android:id="@+id/LayananFragment"
         android:name="com.blogspot.yourfavoritekaisar.tamanindoo.ui.layanan.LayananFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_layanan" />
+        tools:layout="@layout/fragment_layanan" >
+
+    </fragment>
 
     <fragment
         android:id="@+id/PengaturanFragment"
@@ -22,4 +24,5 @@
         android:name="com.blogspot.yourfavoritekaisar.tamanindoo.ui.keluar.KeluarFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_keluar" />
+
 </navigation>

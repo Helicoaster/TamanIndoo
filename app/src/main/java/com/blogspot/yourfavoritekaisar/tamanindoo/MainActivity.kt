@@ -14,6 +14,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.blogspot.yourfavoritekaisar.tamanindoo.ui.layanan.LayananFragment
+import com.blogspot.yourfavoritekaisar.tamanindoo.ui.pengaturan.PengaturanFragment
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -55,10 +57,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         var fragment: Fragment? = null
         when (item.itemId) {
             R.id.LayananMenu -> {
+                fragment = LayananFragment()
+
 
             }
             R.id.PengaturanMenu -> {
-
+                fragment = PengaturanFragment()
             }
             R.id.KeluarMenu -> {
                 super.onBackPressed()
