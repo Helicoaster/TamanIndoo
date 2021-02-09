@@ -3,9 +3,11 @@ package com.blogspot.yourfavoritekaisar.tamanindoo.ui.generate
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
+import android.media.Image
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.blogspot.yourfavoritekaisar.tamanindoo.R
@@ -13,6 +15,7 @@ import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.WriterException
 import com.google.zxing.integration.android.IntentIntegrator
+import com.journeyapps.barcodescanner.BarcodeEncoder
 import kotlinx.android.synthetic.main.activity_generate.*
 
 private const val TAG = "GenerateActivity"
@@ -65,6 +68,10 @@ class GenerateActivity : AppCompatActivity(), View.OnClickListener  {
                         else Color.WHITE)
                 }
             }
+            val barcodeEncoder = BarcodeEncoder()
+            val bitmap = barcodeEncoder.createBitmap(bitMatrix)
+            val image : ImageView = findViewById(R.id.iv_barcode)
+            image.setImageBitmap(bitmap)
         } catch (e : WriterException) {
             Log.d(TAG, "generateQRcode: ${e.message}")
         }
