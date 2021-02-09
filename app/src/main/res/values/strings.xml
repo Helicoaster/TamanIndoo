@@ -16,5 +16,10 @@
     <string name="generate">Generate</string>
     <string name="scanner">Scanner</string>
     <string name="barcode_image">Barcode Image</string>
+    <string name="inbox">Inbox</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawerOpen">Open</string>
+    <string name="drawerClose">Close</string>
 
 </resources>

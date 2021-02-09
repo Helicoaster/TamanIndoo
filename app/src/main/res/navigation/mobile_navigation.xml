@@ -11,6 +11,9 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_layanan" >
 
+        <action
+            android:id="@+id/action_LayananFragment_to_generateFragment"
+            app:destination="@id/generateFragment" />
     </fragment>
 
     <fragment
@@ -24,5 +27,10 @@
         android:name="com.blogspot.yourfavoritekaisar.tamanindoo.ui.keluar.KeluarFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_keluar" />
+    <fragment
+        android:id="@+id/generateFragment"
+        android:name="com.blogspot.yourfavoritekaisar.tamanindoo.ui.generate.GenerateFragment"
+        android:label="fragment_generate"
+        tools:layout="@layout/fragment_generate" />
 
 </navigation>

@@ -1,31 +1,33 @@
 package com.blogspot.yourfavoritekaisar.tamanindoo.ui.generate
 
-import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.blogspot.yourfavoritekaisar.tamanindoo.R
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.WriterException
 import com.google.zxing.integration.android.IntentIntegrator
-import kotlinx.android.synthetic.main.activity_generate.*
+import kotlinx.android.synthetic.main.fragment_generate.*
 
-private const val TAG = "GenerateActivity"
+private const val TAG = "FragmentGenerate"
 
-class GenerateActivity : AppCompatActivity(), View.OnClickListener  {
+class GenerateFragment : Fragment(), View.OnClickListener {
 
     private lateinit var intentIntegrator: IntentIntegrator
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_generate)
-        intentIntegrator = IntentIntegrator(this)
-        btn_main.setOnClickListener(this)
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_generate, container, false)
     }
 
     override fun onClick(v: View?) {
@@ -40,18 +42,7 @@ class GenerateActivity : AppCompatActivity(), View.OnClickListener  {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        val intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
-        if (intentResult!= null){
-            edt_text.setText(intentResult.contents)
-        } else{
-            Toast.makeText(this, "Dibatalkan", Toast.LENGTH_SHORT).show()
-        }
-
-        super.onActivityResult(requestCode, resultCode, data)
-    }
-
-    private fun generateQR(s: String): Bitmap {
+    private fun generateQR(s: String): Bitmap? {
         val width = 500
         val height = 500
         val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
